@@ -16,6 +16,30 @@ export default function BadolAI() {
     setFade(true);
   }, []);
 
+  // Hardcoded responses for common startup questions
+  const hardcodedResponses = {
+    "how to start a startup": "Start by identifying a problem you're passionate about solving. Conduct market research, build a MVP (Minimum Viable Product), and validate your idea with real users.",
+    "what is a business model": "A business model describes how your company creates, delivers, and captures value. Common models include subscription, freemium, and marketplace.",
+    "how to get funding": "You can get funding through bootstrapping, angel investors, venture capital, or crowdfunding. Prepare a solid pitch deck and financial projections.",
+    "what is a pitch deck": "A pitch deck is a presentation that provides an overview of your business. It typically includes problem, solution, market size, product, team, and financials.",
+    "how do i market my startup": "To market your startup effectively, identify your target audience, leverage digital channels (like social media, SEO, and email marketing), and build partnerships. Consistency and a strong value proposition are key.",
+    "what are the best tools for startups": "Some of the best tools for startups include project management tools like Trello, team communication tools like Slack, and marketing automation platforms like HubSpot or Mailchimp. Choose tools based on your specific needs.",
+    "how to scale my startup": "To scale your startup, focus on improving operational efficiencies, investing in customer acquisition, and expanding your product or service offerings. Automation and outsourcing certain functions can also help.",
+    "how to build a team": "Building a strong team starts with hiring people who align with your vision and values. Look for complementary skills, encourage collaboration, and foster a positive company culture.",
+    "what is product-market fit": "Product-market fit occurs when your product meets the needs of the market and has a strong customer base willing to pay for it. It's a sign that you're on the right path toward sustainable growth.",
+    "how do i get my first customers": "Start by reaching out to people who have the problem you're solving. Use social media, online communities, and networking events. Offer free trials, incentives, or referral discounts to attract your first customers.",
+    "do i need a business plan": "Yes, a business plan is crucial for outlining your business goals, strategy, and financial projections. It helps secure investors and guides your decisions as you grow.",
+    "how do i register my startup": "To register your startup, choose a business structure (e.g., LLC, Corporation), register with the local government or online, and obtain necessary licenses or permits. Consult a legal professional to ensure compliance.",
+    "do i need a trademark for my startup": "While it’s not required, registering a trademark for your startup can protect your brand identity and prevent others from using your name, logo, or slogan.",
+    "how do i raise seed funding": "To raise seed funding, you need a compelling pitch that demonstrates your market opportunity, team, and product. Seek out angel investors, venture capital firms, and crowdfunding platforms.",
+    "what is venture capital": "Venture capital (VC) is funding provided by investors to startups and small businesses with high growth potential. In exchange for funding, VCs typically acquire equity in the company.",
+    "how to get angel investors": "Angel investors are typically high-net-worth individuals who invest in startups in exchange for equity or convertible debt. You can find them through networking, online platforms, or industry events.",
+    "tell me a motivational quote": "Here's a quote for you: 'The way to get started is to quit talking and begin doing.' – Walt Disney",
+    "how do i deal with failure": "Failure is a part of entrepreneurship. Learn from your mistakes, adjust your strategies, and keep pushing forward. Remember, every failure is a stepping stone to success.",
+    "what are the most common startup mistakes": "Some common startup mistakes include underestimating expenses, failing to validate the market, hiring the wrong team, and not having a clear business model or growth strategy.",
+  };
+
+  // Handle sending messages and receiving responses
   const handleSend = async () => {
     if (input.trim() === "") return;
 
@@ -25,16 +49,9 @@ export default function BadolAI() {
     setInput("");
     setIsLoading(true); // Start loading
 
-    // Hardcoded responses for common startup questions
-    const hardcodedResponses = {
-      "how to start a startup": "Start by identifying a problem you're passionate about solving. Conduct market research, build a MVP (Minimum Viable Product), and validate your idea with real users.",
-      "what is a business model": "A business model describes how your company creates, delivers, and captures value. Common models include subscription, freemium, and marketplace.",
-      "how to get funding": "You can get funding through bootstrapping, angel investors, venture capital, or crowdfunding. Prepare a solid pitch deck and financial projections.",
-      "what is a pitch deck": "A pitch deck is a presentation that provides an overview of your business. It typically includes problem, solution, market size, product, team, and financials.",
-    };
-
     const lowerCaseInput = input.toLowerCase();
     if (hardcodedResponses[lowerCaseInput]) {
+      // Respond with hardcoded response
       const botMessage = { text: hardcodedResponses[lowerCaseInput], sender: "bot" };
       setMessages((prev) => [...prev, botMessage]);
       setIsLoading(false); // Stop loading
@@ -42,7 +59,7 @@ export default function BadolAI() {
     }
 
     try {
-      // Replace with your Google Gemini API endpoint and API key
+      // Replace with your actual API endpoint and API key
       const apiUrl = "https://api.gemini.google.com/v1/chat/completions"; // Example endpoint
       const apiKey = "AIzaSyATxzlJoT43IPZtTFgvrw3v5alhS5VMhfc"; // Replace with your actual Gemini API key
 
@@ -73,7 +90,6 @@ export default function BadolAI() {
 
   return (
     <main className={`relative min-h-screen flex flex-col items-center px-4 md:px-6 overflow-hidden text-white bg-[#0A0F1D] font-sans transition-opacity duration-700 ${fade ? 'opacity-100' : 'opacity-0'}`}> 
-      
       {/* 🌌 Dynamic Background */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-75 saturate-150" style={{ backgroundImage: "url('/PURPLE_THEME.jpg')" }}></div>
       <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1D]/90 via-[#0A0F1D]/70 to-[#0A0F1D]/90"></div>

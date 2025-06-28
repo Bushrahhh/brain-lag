@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, User, Briefcase, MessageSquare, Star, Globe, Mail, Users, BookOpen, Lightbulb, Coffee, Award, Clipboard, Smile, Zap } from "lucide-react";
+import { ArrowLeft, MessageSquare, Briefcase, Star, Globe, Mail, BookOpen, Clipboard, Smile } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -16,7 +16,7 @@ export default function ConnectWithMentors() {
       name: "SHEERI MAZARIII",
       role: "AI & Machine Learning Expert",
       bio: "Founder of TechNova AI, specializing in AI-driven solutions for businesses. Featured in Startup Pakistan.",
-      image: "/sheeri.jpeg", // Replace with actual image path
+      image: "/sheeri.jpeg",
       rating: 4.8,
       expertise: ["AI", "Startups", "Automation"],
       location: "Karachi, Pakistan",
@@ -28,7 +28,7 @@ export default function ConnectWithMentors() {
       name: "Adolf Hitler",
       role: "Sustainable Energy Consultant",
       bio: "Co-founder of Green Future, providing affordable solar energy solutions for rural households.",
-      image: "/adolfj.jpeg", // Replace with actual image path
+      image: "/adolfj.jpeg",
       rating: 4.6,
       expertise: ["Renewable Energy", "Sustainability", "Rural Development"],
       location: "Lahore, Pakistan",
@@ -40,7 +40,7 @@ export default function ConnectWithMentors() {
       name: "Osama Bin",
       role: "E-commerce Automation Specialist",
       bio: "Founder of ByteBoost, helping small businesses scale online with AI-driven store automation.",
-      image: "/osama.jpeg", // Replace with actual image path
+      image: "/osama.jpeg",
       rating: 4.9,
       expertise: ["E-commerce", "Automation", "AI"],
       location: "Islamabad, Pakistan",
@@ -58,8 +58,7 @@ export default function ConnectWithMentors() {
   };
 
   return (
-    <main className="relative min-h-screen flex flex-col items-center px-6 overflow-hidden text-white bg-[#0A0F1D] font-sans">
-      
+    <main className="relative min-h-screen flex flex-col items-center px-6 overflow-hidden text-white bg-gradient-to-b from-[#0A0F1D] to-[#1E293B] font-sans">
       {/* 🌌 Cyberpunk Background with Animated Gradient */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-50 saturate-150" style={{ backgroundImage: "url('/PURPLE_THEME.jpg')" }}></div>
       <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1D]/90 via-[#0A0F1D]/70 to-[#0A0F1D]/90"></div>

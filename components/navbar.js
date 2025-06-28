@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo or Brand Name */}
         <Link href="/" className="text-2xl font-bold text-cyan-400">
-          RIZZ-MAZDOOR
+         RIZZ MAZDOOR (RIZMORE)
         </Link>
 
         {/* Navigation Links */}
@@ -19,19 +19,19 @@ export default function Navbar() {
            ABOUT
           </Link>
           <Link href="/launchlab" className="text-gray-300 hover:text-cyan-400 transition-all">
-            LAUNCHLAB X
+            LAUNCHLAB
           </Link>
           <Link href="/badol" className="text-gray-300 hover:text-cyan-400 transition-all">
             BADOL-AI
           </Link>
           <Link href="/mentors" className="text-gray-300 hover:text-cyan-400 transition-all">
-            Connect-With-Mentors
+            Mentors
           </Link>
           <Link href="/pressurecooker" className="text-gray-300 hover:text-cyan-400 transition-all">
-           PRESSURE-COOKER
+        RISE-UP
           </Link>
           <Link href="/quizrizz" className="text-gray-300 hover:text-cyan-400 transition-all">
-            QUIZ-RIZZ
+            INVESTORS
           </Link>
         </div>
       </div>
