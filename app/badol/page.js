@@ -59,9 +59,7 @@ export default function BadolAI() {
     }
 
     try {
-      // Replace with your actual API endpoint and API key
-      const apiUrl = "https://api.gemini.google.com/v1/chat/completions"; // Example endpoint
-      const apiKey = "AIzaSyATxzlJoT43IPZtTFgvrw3v5alhS5VMhfc"; // Replace with your actual Gemini API key
+      
 
       const response = await fetch(apiUrl, {
         method: "POST",
